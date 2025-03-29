@@ -1,4 +1,5 @@
 let classCounter = 0;
+const classData = {};
 
 function addClass() {
     const className = document.getElementById("classNameInput").value.trim();
@@ -24,8 +25,6 @@ function addClass() {
     document.getElementById("classNameInput").value = "";
 }
 
-const classData = {};
-
 function addAssessment(classId) {
     const nameInput = document.getElementById(`${classId}-name`);
     const gradeInput = document.getElementById(`${classId}-grade`);
@@ -47,7 +46,6 @@ function addAssessment(classId) {
     listItem.textContent = `${name} - ${grade}% (Weight: ${weight}%)`;
     document.getElementById(`${classId}-list`).appendChild(listItem);
 
-    // Reset inputs
     nameInput.value = "";
     gradeInput.value = "";
     weightInput.value = "";
@@ -75,3 +73,44 @@ function calculateClassGrade(classId) {
 
     document.getElementById(`${classId}-result`).textContent = resultText;
 }
+
+function showTab(tabName) {
+    document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+    document.getElementById(tabName).style.display = 'block';
+
+    document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark');
+    if (document.body.classList.contains('dark')) {
+        spawnBugs('firefly');
+    } else {
+        spawnBugs('dragonfly');
+    }
+}
+
+function spawnBugs(type, count = 15) {
+    removeBugs();
+    for (let i = 0; i < count; i++) {
+        const bug = document.createElement("div");
+        bug.className = type;
+        bug.style.top = Math.random() * window.innerHeight + "px";
+        bug.style.left = Math.random() * window.innerWidth + "px";
+        bug.style.animationDuration = (Math.random() * 2 + 3) + "s";
+        document.body.appendChild(bug);
+    }
+}
+
+function removeBugs() {
+    document.querySelectorAll('.firefly, .dragonfly').forEach(el => el.remove());
+}
+
+window.onload = () => {
+    if (document.body.classList.contains('dark')) {
+        spawnBugs('firefly');
+    } else {
+        spawnBugs('dragonfly');
+    }
+};
