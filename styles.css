@@ -1,6 +1,6 @@
 /* 🌿 Base Typography + Layout */
 body {
-    margin: 0;
+    margin: 50px;
     padding: 0;
     font-family: 'Inter', sans-serif;
     background: #e8f5e9;
@@ -9,6 +9,15 @@ body {
     line-height: 1.6;
     letter-spacing: -0.01rem;
     transition: background 0.4s ease, color 0.4s ease;
+}
+.logo-img {
+    width: 150px; /* Set to your desired width */
+    height: auto; /* Maintains the aspect ratio */
+    transition: width 0.4s ease; /* Smooth transition */
+}
+
+.logo-img:hover {
+    transform: scale(1.1); /* Slightly increases size on hover */
 }
 
 /* 🌒 Dark Theme */
@@ -54,8 +63,8 @@ body.dark button:hover {
 }
 
 .dragonfly {
-    background: #74c69d;
-    box-shadow: 0 0 4px 1px #74c69d;
+    background: #ffe066;
+    box-shadow: 0 0 6px 2px #ffe066;
 }
 
 @keyframes floaty {
