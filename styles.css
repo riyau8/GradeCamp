@@ -1,44 +1,176 @@
-/* Global */
+/* 🌿 Base Typography + Layout */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1f2d20;
-    color: #f1f5e6;
     margin: 0;
     padding: 0;
-    text-align: center;
+    font-family: 'Inter', sans-serif;
+    background: #e8f5e9;
+    color: #1f1f1f;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.01rem;
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* Container */
-.container {
-    max-width: 800px;
-    margin: 40px auto;
-    background: #2d4031;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+/* 🌒 Dark Theme */
+body.dark {
+    background: #0f1e16;
+    color: #e6f2e7;
 }
 
-/* Header */
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+body.dark .info-box {
+    background: #1c2d24cc;
+    color: #d2f1d7;
+    border: 1px solid #2e5d39;
 }
 
-p {
+body.dark .class-box {
+    background: #1e4031;
+    border-color: #81a1ff;
+}
+
+body.dark button {
+    background-color: #93c47d;
+    color: #12291d;
+}
+
+body.dark button:hover {
+    background-color: #7fb86b;
+}
+
+/* 🌌 Fireflies / Dragonflies */
+.firefly, .dragonfly {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: floaty 4s infinite ease-in-out;
+    z-index: 1;
+}
+
+.firefly {
+    background: #ffe066;
+    box-shadow: 0 0 6px 2px #ffe066;
+}
+
+.dragonfly {
+    background: #74c69d;
+    box-shadow: 0 0 4px 1px #74c69d;
+}
+
+@keyframes floaty {
+    0% { transform: translateY(0px) translateX(0); opacity: 0.8; }
+    50% { transform: translateY(-15px) translateX(10px); opacity: 1; }
+    100% { transform: translateY(0px) translateX(0); opacity: 0.6; }
+}
+
+/* 🌲 Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    background: transparent;
+}
+
+.navbar h1 {
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: #2c4d2c;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* 🧭 Tabs */
+.tabs button {
+    background: none;
+    border: none;
     font-size: 1rem;
-    margin-bottom: 20px;
+    font-weight: 600;
+    padding: 10px 16px;
+    cursor: pointer;
+    color: #2c4d2c;
+    border-radius: 6px;
+    transition: background 0.2s ease;
 }
 
-/* Buttons */
+.tabs button:hover {
+    background: rgba(74, 124, 89, 0.1);
+}
+
+.tabs button.active {
+    background: #4a7c59;
+    color: white;
+}
+
+/* 📦 Section Wrapper (Centers Everything) */
+.section-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 📝 Info Box */
+.info-box {
+    background: white;
+    padding: 24px 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.info-box h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.info-box ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+/* 🧾 Class Box */
+.class-box {
+    background: #f8fbf9;
+    border: 1px solid #d9e4dc;
+    border-left: 5px solid #4a7c59;
+    padding: 24px 28px;
+    margin-top: 32px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+/* 🧮 Inputs + Buttons */
+input[type="text"],
+input[type="number"] {
+    padding: 12px 16px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #cfd8dc;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #4a7c59;
+}
+
 button {
+    padding: 12px 20px;
     background-color: #4a7c59;
     color: white;
     border: none;
-    padding: 10px 16px;
-    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 9999px;
     cursor: pointer;
-    border-radius: 6px;
-    margin: 8px;
     transition: background-color 0.2s ease;
 }
 
@@ -46,50 +178,57 @@ button:hover {
     background-color: #3d684a;
 }
 
-/* Inputs */
-input[type="text"],
-input[type="number"] {
-    padding: 10px;
-    margin: 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    width: 160px;
-    font-size: 0.95rem;
+/* 📐 Input Row Layout */
+.input-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
-/* Class Box */
-.class-box {
-    background-color: #314734;
-    border: 2px solid #4a7c59;
-    padding: 20px;
-    margin-top: 25px;
-    border-radius: 12px;
-    text-align: left;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+.input-row input[type="text"] {
+    flex: 1;
+    max-width: 280px;
 }
 
-.class-box h2 {
-    color: #d3e4cd;
-    margin-bottom: 12px;
+.input-row button {
+    min-width: 130px;
 }
 
-/* Grade List */
-.grade-list {
-    list-style: none;
-    padding-left: 0;
-    margin: 15px 0;
+/* 📱 Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tabs {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .container {
+        padding: 24px;
+    }
+
+    input, button {
+        width: 100%;
+        margin: 10px 0;
+    }
 }
 
-.grade-list li {
-    padding: 6px 0;
-    font-size: 0.95rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Results */
-#result,
-[class*="-result"] {
-    font-weight: bold;
-    margin-top: 10px;
-    color: #e6e6e6;
+/* 🌐 Tab Sections */
+.tab-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
