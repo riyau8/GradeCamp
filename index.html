@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🏕️ GradeCamp</h1>
-        <p>Enter your grades to see your final score!</p>
-        <input type="number" id="gradeInput" placeholder="Enter a grade">
-        <button onclick="addGrade()">Add Grade</button>
-        <ul id="gradeList"></ul>
-        <button onclick="calculateAverage()">Calculate Average</button>
-        <p id="result"></p>
-    </div>
-    <script src="script.js"></script>
+<div class="container">
+    <h1>🏕️ GradeCamp</h1>
+    <p>Create classes and track grades easily!</p>
+
+    <input type="text" id="classNameInput" placeholder="Enter Class Name">
+    <button onclick="addClass()">Add Class</button>
+
+    <div id="classList"></div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
