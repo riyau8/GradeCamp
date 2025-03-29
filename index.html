@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>GradeCamp</title>
+    <link rel="icon" href="campgrade.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
 </head>
@@ -12,7 +13,9 @@
 <div class="scenery"></div>
 
 <div class="navbar">
-    <h1>🏕️ GradeCamp</h1>
+    <a href="index.html" class="logo">
+        <img src="campgrade.png" alt="CampGrade Logo" class="logo-img" GradeCamp/>
+    </a>
     <div class="tabs">
         <button onclick="showTab('calculator')" class="active">Grade Calculator</button>
         <button onclick="showTab('mission')">Our Mission</button>
@@ -22,14 +25,14 @@
 
 <div id="calculator" class="tab-content container">
     <div class="info-box">
-        <h2>Welcome to GradeCamp! 🏕️</h2>
+        <h2>Welcome to GradeCamp!</h2>
         <p>This cozy tool helps you manage <strong>multiple classes</strong> and calculate your grades live, with weighted percentages.</p>
         <ul>
             <li>Add multiple classes, each with quizzes, exams, etc.</li>
             <li>Switch to <strong>dark mode 🌙</strong> to reveal a starry sky and fireflies.</li>
             <li>Paste your <strong>syllabus</strong> (coming soon!) and ChatGPT will extract your grading scheme!</li>
         </ul>
-        <p>GradeCamp was built to simplify your academic planning, so you can focus on learning — not spreadsheets. 🌲</p>
+        <p>GradeCamp was built to simplify your academic planning, so you can focus on learning — not spreadsheets.</p>
     </div>
 
     <input type="text" id="classNameInput" placeholder="Enter Class Name"/>
@@ -40,13 +43,13 @@
 <div id="mission" class="tab-content container" style="display: none;">
     <h2>Why We Built GradeCamp</h2>
     <p>
-        College grading can feel like a black box 🔒. We made GradeCamp so students can take back control — with clarity, strategy, and peace of mind.
+        College grading can get difficult to manage, feel confusing, and cause unnecessary stress. We made GradeCamp so students can take back control — with clarity, strategy, and peace of mind.
     </p>
     <p>
-        Whether you're juggling midterms, projects, or just need to know "what if I bomb this quiz?" — GradeCamp gives you instant feedback so you can make smarter choices 💡.
+        Whether you're juggling midterms, projects, or just need to know "what if I bomb this quiz?" — GradeCamp gives you instant feedback so you can make smarter choices.
     </p>
     <p>
-        Inspired by frustration. Powered by curiosity. Built for students, by students.
+        Inspired by frustration. Powered by a need to have better. Built for students, by students.
     </p>
 </div>
 
